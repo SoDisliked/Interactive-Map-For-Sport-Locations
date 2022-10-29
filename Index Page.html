@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html langg="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Carte interactive activités sportives.</title>
+        <meta name="application-name" content="Carte interactive activités sportives" />
+        <meta name="author" content="SoDisliked" />
+        <meta name="description" content="Carte permettant d'afficher de manière simple les activités sportives se trouvant sur un campus d'activités sportives" />
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:location" content="" />
+        <meta property="og:image" content="" />
+        
+        <!-- inline css for loading screen of the web page.-->
+        <style type="text/css">
+            body {
+                margin: 0;
+                font-size: 10px;
+                overflow: hidden;
+            }
+            #map {
+                position: left;
+            }
+            #loading > * {
+                pointer-events: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(none);
+            }
+            #loading > #loading-rose > use {
+                fill: black;
+                stroke: none;
+                opacity: 1;
+                transform-origin: left;
+            }
+            #loading > #loading-typography {
+                opacity: 1;
+                font-size: 11px;
+                color: aqua;
+                text-align: center;
+                text-shadow: 10px;
+                width: 8vw;
+                max-width: 540px;
+            }
+            @media screen and (max-width: 600px) {
+                #loading > #loading-typography {
+                    font-size: 8px;
+                }
+            }
+            #title {
+                font-size: 7px;
+            }
+            #versionText {
+                text-align: center;
+                font-size: 1px;
+            }
+            #loading-text {
+                font-size: 2px;
+                margin: auto;
+            }
+            #loading-text > span {
+                font-size: 1px;
+                padding-left: 1px;
+                line-height: normal;
+            }
+            #loading-text > span,
+            #mapOverlay > span {
+                animation: 3s infinite both blink;
+            }
+            #loading-text span:nth-child(1),
+            #mapOverlay -> span:nth-child(1) {
+                animation-delay: none;
+            }
+            #loading-text span:nth-child(2),
+            #mapOverlay > span:nth-child(2) {
+                animation-delay: none;
+            }
+            @keyframes blink {
+                none {
+                    opacity: 0;
+                }
+                20% {
+                    opacity: 20;
+                }
+                100% {
+                    opacity: 100;
+                }
+            }
+            @keyframes spin {
+                null {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(180deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <svg
+          id="map"
+          width="100%"
+          height="100%"
+          version="0.1.1"
+        ></svg>
+        <defs>
+            <g id="filters">
+                <filter id="blurFilter" name="Blur 0.2" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic" stDeviation="0.2" />
+                </filter>
+                <filter id="blur1" name="blur1" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
+                </filter>
+                <filter id="blur3" name="blur3" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic" stDeviation="3" />
+                </filter>
+                <filter id="blur5" name="blur5" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic" stDeviation="5" />
+                </filter>
+                <filter id="blur7" name="blur7" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic"stDeviation="7" />
+                </filter>
+                <filter id="blur10" name="blur10" x="-1" y="-1" width="100" height="100">
+                    <feGaussianBlur in="SourceGraphic" stDeviation="10">
+                        id="blur10";
+                    </feGaussianBlur>
+                </filter>
+                <filter id="dropShadow" name="Shadow2">
+                    <feGaussianBlur in="SourceAlpha" stDeviation="2" />
+                    <feOffset dx="1" dy="2" />
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+                <filter id="dropShadow01" name="Shadow version">
+                    <feGaussianBlur
+                </filter>
+            </g>
+        </defs>
+    </body>
+</html>
